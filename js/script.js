@@ -5,19 +5,36 @@ var numberPlayer = [];
 var numberComputer = [];
 var listNumRandom;
 var maxChance = 84;
-var MAX_NUMBER = 100
-var MIN_NUMBER = 1
+var MAX_NUMBER = 100;
+var MIN_NUMBER = 1;
 
-var choiceLevel = parseInt(prompt("scegli il livello di difficolta tra " + 1 + (' ') + 2 + (' ') + 3) )
-while (numberComputer.length < 10){
+var choiceLevel = parseInt(prompt("scegli il livello di difficolta tra 1 2 3"))
+
+switch (choiceLevel){
+  case 1:
+  var maxChance = 84;
+  var MAX_NUMBER = 100;
+  break
+  case 2:
+      maxChance = 54;
+      MAX_NUMBER = 70;
+  break
+  case 3:
+      maxChance = 34;
+      MAX_NUMBER = 50;
+  break
+}
+
+while (numberComputer.length < 16){
   listNumRandom = numRandom(MIN_NUMBER, MAX_NUMBER)
        if (!numberComputer.includes(listNumRandom))
-          {numberComputer.push(listNumRandom);
+  {numberComputer.push(listNumRandom);
           console.log(numberComputer)
         }
 }
 var win = false
 var live = true
+
 while (!win && live){
   var userChoice = parseInt(prompt('inserisci unumero da ' + MIN_NUMBER + ' a ' + MAX_NUMBER))
 
@@ -29,7 +46,6 @@ while (!win && live){
   }
   else{
       numberPlayer.push(userChoice)
-
       if(numberComputer.includes(userChoice)){
         alert("hai perso")
         live = false
