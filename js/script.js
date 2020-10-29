@@ -1,59 +1,56 @@
 
 
 
-var numberPlayer = [];
-var numberComputer = [];
-var listNumRandom;
-var maxChance = 84;
-var MAX_NUMBER = 100;
-var MIN_NUMBER = 1;
+var numberPlayer = []
+var numberComputer = []
+var listNumRandom
+var maxChance = 84
 
-var choiceLevel = parseInt(prompt("scegli il livello di difficolta tra 1 2 3"))
+var MAX_NUMBER = 100
+var MIN_NUMBER = 1
 
-switch (choiceLevel){
+var choiceLevel = parseInt ( prompt ('scegli il livello di difficolta tra 1 2 3' ) )
+switch ( choiceLevel ) {
   case 1:
-  var maxChance = 84;
-  var MAX_NUMBER = 100;
+    maxChance = 84;
+    MAX_NUMBER = 100;
   break
   case 2:
-      maxChance = 54;
-      MAX_NUMBER = 70;
+    maxChance = 54;
+    MAX_NUMBER = 70;
   break
   case 3:
-      maxChance = 34;
-      MAX_NUMBER = 50;
+    maxChance = 34;
+    MAX_NUMBER = 50;
   break
 }
 
-while (numberComputer.length < 16){
+while ( numberComputer.length < 16 ) {
   listNumRandom = numRandom(MIN_NUMBER, MAX_NUMBER)
-       if (!numberComputer.includes(listNumRandom))
-  {numberComputer.push(listNumRandom);
-          console.log(numberComputer)
-        }
+  if ( !numberComputer.includes (listNumRandom) ){
+    numberComputer.push (listNumRandom);
+    console.log ( numberComputer )
+  }
 }
+
 var win = false
 var live = true
-
-while (!win && live){
-  var userChoice = parseInt(prompt('inserisci unumero da ' + MIN_NUMBER + ' a ' + MAX_NUMBER))
-
-  if(numberPlayer.includes(userChoice)){
-     alert('numero già inserito')
-  }
-  else if ((userChoice < MIN_NUMBER) || (userChoice > MAX_NUMBER)){
-    alert('inserire numeri da ' + MIN_NUMBER + ' a ' + MAX_NUMBER )
-  }
-  else{
-      numberPlayer.push(userChoice)
-      if(numberComputer.includes(userChoice)){
-        alert("hai perso")
-        live = false
-      }
-      else if (numberPlayer.length === maxChance){
-        alert("bravo hai vinto")
+while ( !win && live ) {
+  var userChoice = parseInt ( prompt ( 'inserisci unumero da ' + MIN_NUMBER + ' a ' + MAX_NUMBER ) )
+  if ( numberPlayer.includes (userChoice) ) {
+    alert('numero già inserito')
+  } else if ( userChoice < MIN_NUMBER || userChoice > MAX_NUMBER ) {
+      alert( 'inserire numeri da ' + MIN_NUMBER + ' a ' + MAX_NUMBER )
+  } else {
+    numberPlayer.push ( userChoice )
+    if ( numberComputer.includes ( userChoice ) ) {
+      alert ( 'hai perso' )
+      live = false
+    } else if ( numberPlayer.length === maxChance ) {
+        alert ( 'bravo hai vinto' )
         win = true
-      }
+    }
   }
-  document.getElementById('result').innerHTML = 'il tuo punteggio e di: ' + numberPlayer.length
 }
+
+document.getElementById ( 'result' ) .innerHTML = 'il tuo punteggio è di: ' + numberPlayer.length
