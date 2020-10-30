@@ -26,6 +26,7 @@ switch ( choiceLevel ) {
 }
 
 while ( numberComputer.length < 16 ) {
+  var numberComputer = []
   listNumRandom = numRandom(MIN_NUMBER, MAX_NUMBER)
   if ( !numberComputer.includes (listNumRandom) ){
     numberComputer.push (listNumRandom);

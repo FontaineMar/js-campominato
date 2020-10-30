@@ -4,20 +4,27 @@
     <meta charset="utf-8">
     <title>Campominato</title>
     <script src="js/function.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>imposta livello</h1>
-  <select class="" id="level" name="">
-    <option value="facile">Facile</option>
-    <option value="medio">Medio</option>
-    <option value="difficile">Difficile</option>
-  </select>
- <h1>inserisci il tuo numero</h1>
- <input type="number" id="numberUser" name="" value="">
- <button type="button" id="generator" name="button">Play</button>
-    <h2 id="result">il tuo punteggio è di :</h2>
+    <header>
+      <h1>imposta livello</h1>
+      <select class="" id="level" name="">
+        <option value="facile">Facile</option>
+        <option value="medio">Medio</option>
+        <option value="difficile">Difficile</option>
+      </select>
+    </header>
+    <main>
+      <div class="table-play">
+        <div class="dashboard easy"></div>
+        <div class="dashboard medium"></div>
+        <div class="dashboard hard"></div>
+      </div>
+    </main>
 
     <!-- script -->
-    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/main-drive.js" charset="utf-8"></script>
+    <!-- <script src="js/script.js" charset="utf-8"></script> -->
   </body>
 </html>
